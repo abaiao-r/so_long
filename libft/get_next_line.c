@@ -6,12 +6,11 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:17:58 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/03/04 19:27:55 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:38:49 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 char	*get_next_line(int fd)
 {
@@ -39,7 +38,6 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
 /* int	main(void)
 {
 	char *line;

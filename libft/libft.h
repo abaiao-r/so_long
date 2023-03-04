@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:00:36 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/04 19:27:49 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:38:04 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,10 @@ void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+/* ft_printf */
 int					ft_printf(const char *s, ...);
+
+/* get_next_line */
 char				*get_next_line(int fd);
 size_t				ft_strlen_gnl(char *s);
 char				*ft_strjoin_gnl(char *s1, char *s2);
