@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:00:36 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/03 15:48:54 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:27:49 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,7 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 int					ft_printf(const char *s, ...);
 char				*get_next_line(int fd);
+size_t				ft_strlen_gnl(char *s);
+char				*ft_strjoin_gnl(char *s1, char *s2);
 int					stash_organizer(char *stash);
 #endif

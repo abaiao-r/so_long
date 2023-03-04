@@ -6,11 +6,12 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:17:58 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/03/03 13:46:57 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:27:55 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 
 char	*get_next_line(int fd)
 {
@@ -24,7 +25,7 @@ char	*get_next_line(int fd)
 		stash[read(fd, stash, BUFFER_SIZE)] = 0;
 	while (stash[0])
 	{
-		line = ft_strjoin(line, stash);
+		line = ft_strjoin_gnl(line, stash);
 		if (!line)
 			return (NULL);
 		if (stash_organizer(stash) == 1)
