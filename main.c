@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/03/07 18:29:12 by abaiao-r         ###   ########.fr       */
+/*   Created: 2023/03/07 14:14:07 by abaiao-r          #+#    #+#             */
+/*   Updated: 2023/03/07 18:27:04 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "libft/libft.h"
-# include "minilibx-linux/mlx.h"
-# include <limits.h>
-# include <stddef.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <unistd.h>
-
-typedef struct s_solong
+int main(int ac, char **av)
 {
+    t_solong    *so_long;
+
+    if(!check_arguments_input(ac, av))
+        return(0);
     
-}   t_solong;
 
-/* check_arguments_input */
-int	check_map_name(char *str);
-int	check_arguments_input(int ac, char **av);
 
-#endif
+        
+}
