@@ -6,16 +6,17 @@
 #    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 16:08:07 by abaiao-r          #+#    #+#              #
-#    Updated: 2023/03/07 16:45:31 by abaiao-r         ###   ########.fr        #
+#    Updated: 2023/03/15 17:21:52 by abaiao-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = 	main.c\
-		check_arguments.c\
-		map_check.c  \
-		mlx_init.c \
+SRC = 	map_init.c
+#main.c\
+#check_arguments.c\
+#map_check.c  \
+#mlx_init.c \
 
 
 #OBJS = $(SRC:.c=.o)
@@ -41,7 +42,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 			$(MAKE) -C $(LIBFT_DIR) bonus
 			$(MAKE) -C $(MLX_LIB_DIR)
-			$(CC) $(CFLAGS) $(MLX_INCLUDE) $(SRC) libft/libft.a $(MLX_FLAGS) -o $(NAME) -fsanitize=address
+			$(CC) $(CFLAGS) $(MLX_INCLUDE) $(SRC) libft/libft.a $(MLX_FLAGS) -o $(NAME) 
+#-fsanitize=address
 clean:	
 			$(RM) $(OBJS)
 			$(MAKE) -C $(LIBFT_DIR) clean

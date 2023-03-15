@@ -6,32 +6,28 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:23:48 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/07 18:29:55 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/15 17:49:57 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	count_lines(char *map)
+int map_checklist(char **map)
 {
-	char	*line;
-	int		fd1;
-	int		i;
-
-	fd1 = open("map.ber", O_RDONLY);
-	line = get_next_line(fd1);
-	i = 0;
-	while (line != NULL)
-	{
-		i++;
-		free(line);
-		line = get_next_line(fd1);
-	}
-	close(fd1);
-	return (i);
+    if(!map_is_rectangular(map))
+        return (0);
+    if(!map_is_enclosed(map))
+        return(0);
+    if(!map_has_1_exit(map))
+        return(0);
+    if (!map_has_1_start_position(map))
+        return(0);
+    if(!map_has_colectibles(map))
+        return(0);
+    if(!map_exit_is_possible(map))
+        return(0);
+    if(!map_colectibles_are_possible(map))
+        return(0);
+    return(1);
 }
 
-int main (void)
-{
-	
-}
