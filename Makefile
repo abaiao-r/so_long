@@ -6,16 +6,17 @@
 #    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 16:08:07 by abaiao-r          #+#    #+#              #
-#    Updated: 2023/03/15 17:21:52 by abaiao-r         ###   ########.fr        #
+#    Updated: 2023/03/15 20:36:49 by abaiao-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = 	map_init.c
+SRC = 	map_check.c  \
+		map_check_utils.c 
+#map_init.c
 #main.c\
 #check_arguments.c\
-#map_check.c  \
 #mlx_init.c \
 
 

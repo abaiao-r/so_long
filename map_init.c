@@ -6,13 +6,11 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/15 17:21:36 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/15 19:43:45 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "so_long.h"
-
 
 int	ft_count_lines(char *argv)
 {
@@ -43,17 +41,17 @@ char	**map_reader(char *argv)
 
 	number_of_lines = ft_count_lines(argv);
 	map = (char **)ft_calloc(number_of_lines, sizeof(char *));
-    if(!map)
-        return(0);
-    fd1 = open(argv, O_RDONLY);
+	if (!map)
+		return (0);
+	fd1 = open(argv, O_RDONLY);
 	i = 0;
 	while (i < number_of_lines)
 	{
 		map[i] = get_next_line(fd1);
 		i++;
 	}
-    close (fd1);
-    return(map);
+	close(fd1);
+	return (map);
 }
 
 /* main to test map_reader */
@@ -71,7 +69,6 @@ char	**map_reader(char *argv)
         i++;
     }
 } */
-
 
 /* main to test ft_count_lines */
 /* int main(int argc, char **argv)
