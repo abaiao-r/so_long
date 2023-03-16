@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/03/16 18:00:29 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:54:15 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,6 @@ typedef struct s_map
 {
 	int		x;
 	int		y;
-	int		map_is_rectangular;
-	int		map_is_enclosed;
-	int		map_has_1_exit;
-	int		map_has_1_start_position;
-	int		map_has_colectibles;
-	int		map_colectibles_are_possible;
 
 	char	**map;
 }			t_map;

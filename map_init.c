@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/16 17:45:57 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:54:14 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,10 @@ t_map	*init_map(char *argv)
 	if (!map_characteristics->map)
 		return (0);
 	map_characteristics->y = ft_count_lines(argv);
+	map_characteristics->x = ft_strlen(map_characteristics->map[0]);
 	map_checklist(map_characteristics->map);
+	
+
 }
 
 /* main to test map_reader */
