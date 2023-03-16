@@ -6,31 +6,12 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:23:48 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/15 20:51:40 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/16 15:09:53 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	map_has_colectibles(char **map)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-		{
-			if (map[i][j] == 'C')
-				return (1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
 
 int	map_has_1_start_position(char **map)
 {
@@ -149,7 +130,12 @@ int	map_is_rectangular(char **map)
 /* main to test map_is_rectangular */
 int	main(void)
 {
-	char *map[] = {"11111111", "100000E1", "10P0P001", "11111111"};
+	char *map[] = {
+		"11111111", 
+		"100000E1", 
+		"10P0C001", 
+		"11111111"
+		};
 
 	printf("map is rectangular: %d \n", map_is_rectangular(map));
 	printf("map is enclosed: %d \n", map_is_enclosed(map));
