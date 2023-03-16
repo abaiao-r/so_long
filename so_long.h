@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/03/16 15:09:39 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:00:29 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_map
 	int		map_has_1_exit;
 	int		map_has_1_start_position;
 	int		map_has_colectibles;
+	int		map_colectibles_are_possible;
 
 	char	**map;
 }			t_map;
@@ -51,9 +52,10 @@ int			map_is_rectangular(char **map);
 int			map_checklist(char **map);
 
 /* map_check2 */
+int			map_is_only_01pce(char **map);
 int			map_has_colectibles(char **map);
 
 /* map_check_utils */
-int			ft_count_map_lines(char **map);
+size_t		ft_count_map_lines(char **map);
 
 #endif

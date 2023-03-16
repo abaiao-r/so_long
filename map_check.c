@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:23:48 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/16 15:09:53 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:09:20 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int	map_has_1_exit(char **map)
 
 int	map_is_enclosed(char **map)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (map[i])
@@ -120,6 +120,8 @@ int	map_is_rectangular(char **map)
 		return (0);
 	if (!map_has_colectibles(map))
 		return (0);
+	if (!map_is_only_01pce(map))
+		return (0);
 	if (!map_exit_is_possible(map))
 		return (0);
 	if (!map_colectibles_are_possible(map))
@@ -142,4 +144,5 @@ int	main(void)
 	printf("map has 1 exit: %d \n", map_has_1_exit(map));
 	printf("map has 1 start_position: %d \n", map_has_1_start_position(map));
 	printf("map has colectibles: %d \n", map_has_colectibles(map));
+	printf("map is only 01pce: %d \n", map_is_only_01pce(map));
 }

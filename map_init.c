@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/15 19:43:45 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:45:57 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,20 @@ char	**map_reader(char *argv)
 	}
 	close(fd1);
 	return (map);
+}
+
+t_map	*init_map(char *argv)
+{
+	t_map	*map_characteristics;
+
+	map_characteristics = (t_map *)ft_calloc(1, sizeof(t_map));
+	if (!map_characteristics)
+		return (0);
+	map_characteristics->map = map_reader(argv);
+	if (!map_characteristics->map)
+		return (0);
+	map_characteristics->y = ft_count_lines(argv);
+	map_checklist(map_characteristics->map);
 }
 
 /* main to test map_reader */
