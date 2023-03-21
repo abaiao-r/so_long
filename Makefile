@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 16:08:07 by abaiao-r          #+#    #+#              #
-#    Updated: 2023/03/16 17:27:35 by abaiao-r         ###   ########.fr        #
+#    Updated: 2023/03/21 18:44:16 by andrefranci      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,10 @@ NAME = so_long
 
 SRC = 	map_check.c  \
 		map_check2.c \
+		map_check3.c \
 		map_check_utils.c \
-		free_memory.c
-#map_init.c
+		free_memory.c \
+		map_init.c
 #main.c\
 #check_arguments.c\
 #mlx_init.c \

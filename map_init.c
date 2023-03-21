@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/16 18:54:14 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/21 21:38:30 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,19 +56,26 @@ char	**map_reader(char *argv)
 
 t_map	*init_map(char *argv)
 {
-	t_map	*map_characteristics;
+	t_map	*map_set;
+	char	**map_canvas;
 
-	map_characteristics = (t_map *)ft_calloc(1, sizeof(t_map));
-	if (!map_characteristics)
+	map_set = (t_map *)ft_calloc(1, sizeof(t_map));
+	if (!map_set)
 		return (0);
-	map_characteristics->map = map_reader(argv);
-	if (!map_characteristics->map)
+	map_set->map = map_reader(argv);
+	if (!map_set->map)
 		return (0);
-	map_characteristics->y = ft_count_lines(argv);
-	map_characteristics->x = ft_strlen(map_characteristics->map[0]);
-	map_checklist(map_characteristics->map);
-	
-
+	map_set->y = ft_count_lines(argv);
+	map_set->x = ft_strlen(map_set->map[0]);
+	map_checklist(map_set->map, map_set);
+	map_set->number_of_c = number_of_c(map_set->map);
+	map_canvas = map_blank(map_set->y, map_set->x);
+	map_goal_possible(map_set, map_canvas, map_set->p_pos_y, map_set->p_pos_x);
+	free_map(map_canvas, map_set->y);
+	if (!((map_set->map_goal_exit)
+			|| (map_set->map_goal_c == map_set->number_of_c)))
+		return (free_t_map(map_set, 'p'));
+	return (map_set);
 }
 
 /* main to test map_reader */
