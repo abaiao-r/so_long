@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/21 21:38:30 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/21 23:57:20 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ char	**map_reader(char *argv)
 	if (!map)
 		return (0);
 	fd1 = open(argv, O_RDONLY);
+	if (fd1 < 0 || fd1 > 4096)
+		return (0);
 	i = 0;
 	while (i < number_of_lines)
 	{
@@ -54,7 +56,7 @@ char	**map_reader(char *argv)
 	return (map);
 }
 
-t_map	*init_map(char *argv)
+t_map	*map_init(char *argv)
 {
 	t_map	*map_set;
 	char	**map_canvas;
@@ -64,7 +66,11 @@ t_map	*init_map(char *argv)
 		return (0);
 	map_set->map = map_reader(argv);
 	if (!map_set->map)
+	{
+		free(map_set);
+		free(map_set->map);
 		return (0);
+	}
 	map_set->y = ft_count_lines(argv);
 	map_set->x = ft_strlen(map_set->map[0]);
 	map_checklist(map_set->map, map_set);
@@ -74,7 +80,7 @@ t_map	*init_map(char *argv)
 	free_map(map_canvas, map_set->y);
 	if (!((map_set->map_goal_exit)
 			|| (map_set->map_goal_c == map_set->number_of_c)))
-		return (free_t_map(map_set, 'p'));
+		return (free_t_map(map_set, 'e'));
 	return (map_set);
 }
 
@@ -100,3 +106,36 @@ t_map	*init_map(char *argv)
     (void)argc;
     printf("%d", ft_count_lines(argv[1]));
 } */
+
+int	main(int argc, char **argv)
+{
+	t_map *gps;
+	int i;
+	
+	if(!check_arguments_input(argc, argv))
+        return(0);
+	gps = (t_map *)ft_calloc(1, sizeof(t_map));
+	gps = map_init(argv[1]);
+	if (gps == NULL)
+	{
+		printf("Error: map_init returned NULL\n");
+		return (1);
+	}
+	printf("Map dimensions: %d x %d\n", gps->x, gps->y);
+	printf("Number of colectibles: %d\n", gps->number_of_c);
+	printf("Map is rectangular: %d\n", gps->map_is_rectangular);
+	printf("Map is enclosed: %d\n", gps->map_is_enclosed);
+	printf("Map has 1 exit: %d\n", gps->map_1_exit);
+	printf("Map has 1 start position: %d\n", gps->map_1_start_pos);
+	printf("Map has only 01PCE: %d\n", gps->map_is_only_01pce);
+	printf("Map has collectibles: %d\n", gps->map_has_colectibles);
+	printf("Map exit is possible: %d\n", gps->map_goal_exit);
+	printf("Map collectibles are possible: %d\n", gps->map_goal_c);
+	i = 0;
+	while (i < gps->p_pos_y)
+	{
+		printf("%s\n", gps->map[i]);
+		i++;
+	}
+	return (0);
+}

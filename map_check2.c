@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:47:26 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/21 21:37:02 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/21 22:39:56 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,26 +82,3 @@ void	map_goal_possible(t_map *map_set, char **map_canvas, int p_pos_y,
 	map_goal_possible(map_set, map_canvas, p_pos_y, p_pos_x - 1);
 	return ;
 }
-
-/* bool is_valid(int map_set->y, int map_set->x)
-{
-	return()
-}
-int	map_exit_is_possible(char **map, t_map size, t_map pos, char target)
-{
-	char	replacement;
-
-	replacement = ;
-	if (pos.y < 0 || pos.y >= size.y || pos.x < 0 || pos.x >= size.x
-		|| tab[pos.y][pos.x] != target, replacement)
-		return ;
-	tab[pos.y][pos.x] = 'F';
-	map_exit_is_possible(tab, size, (t_map){pos.x - 1, pos.y}, target,
-			replacement);
-	map_exit_is_possible(tab, size, (t_map){pos.x + 1, pos.y}, target,
-			replacement);
-	map_exit_is_possible(tab, size, (t_map){pos.x, pos.y - 1}, target,
-			replacement);
-	map_exit_is_possible(tab, size, (t_map){pos.x, pos.y + 1}, target,
-			replacement);
-} */

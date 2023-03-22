@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:26:24 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/21 21:47:39 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/21 23:17:41 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,18 @@ t_map	*free_t_map(t_map *map_set, char error)
 	free_map(map_set->map, map_set->y);
 	free(map_set);
 	map_set = NULL;
-	if (error == 'r')
-		ft_printf("Error: Map is not a rectangule\n");
-	if (error == 'w')
-		ft_printf("Error: Map is not enclosed by walls\n");
-	if (error == 'p')
-		ft_printf("Error: Is not possible for the player \
-            reach all collectibles and the exit\n");
+	if (error == 'a')
+		ft_printf("Error: Map isn't rectangular\n");
+	if (error == 'b')
+		ft_printf("Error: Map isn't enclosed by walls\n");
+	if (error == 'c')
+		ft_printf("Error: Player start position or map exit \
+         is different than 1.\n");
+	if (error == 'd')
+		ft_printf("Error:  Map does not have collectibles or \
+        have and invalid element(!01PCE)\n");
+	if (error == 'e')
+		ft_printf("Error:  Is not possible for the the player \
+        to reach all collectibles and the exit\n");
 	return (map_set);
 }

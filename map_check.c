@@ -6,13 +6,13 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:23:48 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/21 20:57:36 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 00:05:02 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	map_has_1_start_position(char **map, t_map *map_set)
+int	map_1_start_pos(char **map, t_map *map_set)
 {
 	int	i;
 	int	j;
@@ -37,11 +37,11 @@ int	map_has_1_start_position(char **map, t_map *map_set)
 	}
 	if (count_start_position != 1)
 		return (0);
-	map_set->map_has_1_start_position = 1;
+	map_set->map_1_start_pos = 1;
 	return (1);
 }
 
-int	map_has_1_exit(char **map, t_map *map_set)
+int	map_1_exit(char **map, t_map *map_set)
 {
 	int	i;
 	int	j;
@@ -62,7 +62,7 @@ int	map_has_1_exit(char **map, t_map *map_set)
 	}
 	if (count_exit != 1)
 		return (0);
-	map_set->map_has_1_exit = 1;
+	map_set->map_1_exit = 1;
 	return (1);
 }
 
@@ -118,21 +118,25 @@ int	map_is_rectangular(char **map, t_map *map_set)
 int	map_checklist(char **map, t_map *map_set)
 {
 	if (!map_is_rectangular(map, map_set))
+	{
+		free_t_map(map_set, 'a');
 		return (0);
+	}
 	if (!map_is_enclosed(map, map_set))
+	{
+		free_t_map(map_set, 'b');
 		return (0);
-	if (!map_has_1_exit(map, map_set))
+	}
+	if (!map_1_exit(map, map_set) || !map_1_start_pos(map, map_set))
+	{
+		free_t_map(map_set, 'c');
 		return (0);
-	if (!map_has_1_start_position(map, map_set))
+	}
+	if (!map_has_colectibles(map, map_set) || !map_is_only_01pce(map, map_set))
+	{
+		free_t_map(map_set, 'd');
 		return (0);
-	if (!map_has_colectibles(map, map_set))
-		return (0);
-	if (!map_is_only_01pce(map, map_set))
-		return (0);
-	if (!map_exit_is_possible(map, map_set))
-		return (0);
-	if (!map_colectibles_are_possible(map, map_set))
-		return (0);
+	}
 	return (1);
 }
 
@@ -148,8 +152,8 @@ int	map_checklist(char **map, t_map *map_set)
 
 	printf("map is rectangular: %d \n", map_is_rectangular(map));
 	printf("map is enclosed: %d \n", map_is_enclosed(map));
-	printf("map has 1 exit: %d \n", map_has_1_exit(map));
-	printf("map has 1 start_position: %d \n", map_has_1_start_position(map));
+	printf("map has 1 exit: %d \n", map_1_exit(map));
+	printf("map has 1 start_position: %d \n", map_1_start_pos(map));
 	printf("map has colectibles: %d \n", map_has_colectibles(map));
 	printf("map is only 01pce: %d \n", map_is_only_01pce(map));
 }

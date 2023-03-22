@@ -6,7 +6,7 @@
 #    By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 16:08:07 by abaiao-r          #+#    #+#              #
-#    Updated: 2023/03/21 18:44:16 by andrefranci      ###   ########.fr        #
+#    Updated: 2023/03/21 23:20:15 by andrefranci      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,13 @@ NAME = so_long
 
 SRC = 	map_check.c  \
 		map_check2.c \
-		map_check3.c \
 		map_check_utils.c \
 		free_memory.c \
-		map_init.c
+		map_init.c \
+		check_arguments.c \
+		
 #main.c\
-#check_arguments.c\
+
 #mlx_init.c \
 
 

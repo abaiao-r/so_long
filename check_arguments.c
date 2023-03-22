@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arguments.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:34:34 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/07 16:44:41 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/03/21 23:22:19 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,14 @@ int	check_map_name(char *str)
 	size_t	i;
 
 	i = ft_strlen(str) - 1;
-	if (str[i] != 'r' || str[i - 1] != 'e' || str[i - 2] != 'b' || str[i- 3] != '.')
+	if (str[i] != 'r' || str[i - 1] != 'e' || str[i - 2] != 'b' || str[i
+			- 3] != '.')
 		return (1);
 	return (0);
 }
 
 int	check_arguments_input(int ac, char **av)
 {
-	int	i;
-
-	i = 1;
 	if (ac == 1 || ac > 2)
 	{
 		ft_printf("Your input on terminal should be: ./so_long <map_name.ber>");
