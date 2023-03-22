@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:47:26 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/21 22:39:56 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 01:42:00 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,11 @@ int	map_is_only_01pce(char **map, t_map *map_set)
 	size_t	j;
 
 	i = 0;
-	while (map[i])
+	j = 0;
+	while (map[i][j])
 	{
 		j = 0;
-		while (map[i][j])
+		while (j <= ((size_t)map_set->x - 2))
 		{
 			if (map[i][j] != '0' && map[i][j] != '1' && map[i][j] != 'P'
 				&& map[i][j] != 'C' && map[i][j] != 'E')
@@ -61,7 +62,7 @@ void	map_goal_possible(t_map *map_set, char **map_canvas, int p_pos_y,
 		int p_pos_x)
 {
 	if (!(p_pos_y >= 0 && p_pos_y < map_set->y && p_pos_x >= 0
-			&& p_pos_x < map_set->x))
+			&& p_pos_x < (map_set->x) - 2))
 		return ;
 	if (map_set->map[p_pos_y][p_pos_y] == '1')
 		return ;

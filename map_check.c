@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:23:48 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 00:05:02 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 01:24:09 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int	map_is_enclosed(char **map, t_map *map_set)
 		if (i == 0 || i == ft_count_map_lines(map) - 1)
 		{
 			j = 0;
-			while (map[i][j])
+			while (j <= (size_t)(map_set->x - 2))
 			{
 				if (map[i][j] != '1')
 					return (0);
@@ -86,7 +86,7 @@ int	map_is_enclosed(char **map, t_map *map_set)
 		}
 		if (map[i][0] != '1')
 			return (0);
-		if (map[i][ft_strlen(map[i]) - 1] != '1')
+		if (map[i][ft_strlen(map[i]) - 2] != '1')
 			return (0);
 		i++;
 	}
@@ -105,6 +105,8 @@ int	map_is_rectangular(char **map, t_map *map_set)
 	while (map[i])
 	{
 		line_lenght2 = ft_strlen(map[i]);
+		if (i == map_set->y - 1)
+			line_lenght2 += 1;
 		if (line_lenght2 != line_lenght)
 			return (0);
 		i++;
@@ -149,7 +151,6 @@ int	map_checklist(char **map, t_map *map_set)
 		"10P0C001", 
 		"11111111"
 		};
-
 	printf("map is rectangular: %d \n", map_is_rectangular(map));
 	printf("map is enclosed: %d \n", map_is_enclosed(map));
 	printf("map has 1 exit: %d \n", map_1_exit(map));
