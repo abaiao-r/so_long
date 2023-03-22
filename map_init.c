@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 14:41:45 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 14:56:09 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ t_map	*map_init(char *argv)
 	map_canvas = map_blank(map_set->y, map_set->x);
 	map_goal_possible(map_set, map_canvas, map_set->p_pos_y, map_set->p_pos_x);
 	free_map(map_canvas, map_set->y);
-	if (!((map_set->map_goal_exit)
+	if ((!(map_set->map_goal_exit)
 			|| (map_set->map_goal_c == map_set->number_of_c)))
 		return (free_t_map(map_set, 'e'));
 	return (map_set);
@@ -122,6 +122,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	printf("Map dimensions: %dy by %dx\n", gps->y, gps->x);
+	printf("Player start position: %dy by %dx\n", gps->p_pos_y, gps->p_pos_y);
 	printf("Number of colectibles: %d\n", gps->number_of_c);
 	printf("Map is rectangular: %d\n", gps->map_is_rectangular);
 	printf("Map is enclosed: %d\n", gps->map_is_enclosed);
@@ -130,11 +131,11 @@ int	main(int argc, char **argv)
 	printf("Map has only 01PCE: %d\n", gps->map_is_only_01pce);
 	printf("Map has collectibles: %d\n", gps->map_has_colectibles);
 	printf("Map exit is possible: %d\n", gps->map_goal_exit);
-	printf("Map collectibles are possible: %d\n", gps->map_goal_c);
+	printf("Map collectibles are possible: %d\n\n", gps->map_goal_c);
 	i = 0;
-	while (i < gps->p_pos_y)
+	while (i < gps->y)
 	{
-		printf("%s\n", gps->map[i]);
+		printf("%s", gps->map[i]);
 		i++;
 	}
 	return (0);
