@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 14:56:09 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 15:18:54 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,8 @@ t_map	*map_init(char *argv)
 	map_canvas = map_blank(map_set->y, map_set->x);
 	map_goal_possible(map_set, map_canvas, map_set->p_pos_y, map_set->p_pos_x);
 	free_map(map_canvas, map_set->y);
-	if ((!(map_set->map_goal_exit)
-			|| (map_set->map_goal_c == map_set->number_of_c)))
+	if (!(map_set->map_goal_exit)
+		|| !(map_set->map_goal_c == map_set->number_of_c))
 		return (free_t_map(map_set, 'e'));
 	return (map_set);
 }
@@ -87,10 +87,10 @@ t_map	*map_init(char *argv)
 /* main to test map_reader */
 /* int main(int argc, char **argv)
 {
-    (void) argc;
     char **temp;
     int i;
 
+    (void) argc;
     i = 0;
     temp = map_reader(argv[1]);
     while (i < 3)
@@ -99,7 +99,6 @@ t_map	*map_init(char *argv)
         i++;
     }
 } */
-
 /* main to test ft_count_lines */
 /* int main(int argc, char **argv)
 {
@@ -109,11 +108,11 @@ t_map	*map_init(char *argv)
 
 int	main(int argc, char **argv)
 {
-	t_map *gps;
-	int i;
-	
-	if(!check_arguments_input(argc, argv))
-        return(0);
+	t_map	*gps;
+	int		i;
+
+	if (!check_arguments_input(argc, argv))
+		return (0);
 	gps = (t_map *)ft_calloc(1, sizeof(t_map));
 	gps = map_init(argv[1]);
 	if (gps == NULL)

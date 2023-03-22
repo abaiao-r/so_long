@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:47:26 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 14:49:40 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 15:11:30 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,9 +64,9 @@ void	map_goal_possible(t_map *map_set, char **map_canvas, int p_pos_y,
 	if (!(p_pos_y >= 0 && p_pos_y < (map_set->y - 1) && p_pos_x >= 0
 			&& p_pos_x < ((map_set->x) - 1)))
 		return ;
-	if (map_set->map[p_pos_y][p_pos_y] == '1')
+	if (map_set->map[p_pos_y][p_pos_x] == '1')
 		return ;
-	if (map_canvas[p_pos_y][p_pos_y] == '1')
+	if (map_canvas[p_pos_y][p_pos_x] == '1')
 		return ;
 	if (map_set->map[p_pos_y][p_pos_x] == 'E')
 	{
