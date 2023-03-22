@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 15:18:54 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 23:39:24 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	**map_reader(char *argv)
 	int		i;
 
 	number_of_lines = ft_count_lines(argv);
-	map = (char **)ft_calloc(number_of_lines, sizeof(char *));
+	map = (char **)ft_calloc(number_of_lines + 1, sizeof(char *));
 	if (!map)
 		return (0);
 	fd1 = open(argv, O_RDONLY);
@@ -52,6 +52,7 @@ char	**map_reader(char *argv)
 		map[i] = get_next_line(fd1);
 		i++;
 	}
+	map[i] = NULL;
 	close(fd1);
 	return (map);
 }
@@ -73,7 +74,8 @@ t_map	*map_init(char *argv)
 	}
 	map_set->y = ft_count_lines(argv);
 	map_set->x = ft_strlen(map_set->map[0]);
-	map_checklist(map_set->map, map_set);
+	if (!map_checklist(map_set->map, map_set))
+		return (0);
 	map_set->number_of_c = number_of_c(map_set->map);
 	map_canvas = map_blank(map_set->y, map_set->x);
 	map_goal_possible(map_set, map_canvas, map_set->p_pos_y, map_set->p_pos_x);
@@ -113,7 +115,6 @@ int	main(int argc, char **argv)
 
 	if (!check_arguments_input(argc, argv))
 		return (0);
-	gps = (t_map *)ft_calloc(1, sizeof(t_map));
 	gps = map_init(argv[1]);
 	if (gps == NULL)
 	{
@@ -137,5 +138,6 @@ int	main(int argc, char **argv)
 		printf("%s", gps->map[i]);
 		i++;
 	}
+	free_t_map(gps, ' ');
 	return (0);
 }

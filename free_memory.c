@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:26:24 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 01:27:45 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 15:34:39 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ char	**free_map(char **map, int y)
 		free(map[i]);
 		i++;
 	}
+	free(map);
 	map = NULL;
 	return (map);
 }
