@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/21 23:57:20 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 14:41:45 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int	main(int argc, char **argv)
 		printf("Error: map_init returned NULL\n");
 		return (1);
 	}
-	printf("Map dimensions: %d x %d\n", gps->x, gps->y);
+	printf("Map dimensions: %dy by %dx\n", gps->y, gps->x);
 	printf("Number of colectibles: %d\n", gps->number_of_c);
 	printf("Map is rectangular: %d\n", gps->map_is_rectangular);
 	printf("Map is enclosed: %d\n", gps->map_is_enclosed);

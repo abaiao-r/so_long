@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:24:59 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 00:56:17 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 14:38:02 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	number_of_c(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == 'P')
+			if (map[i][j] == 'C')
 			{
 				count_colectibles++;
 			}

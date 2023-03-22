@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:47:26 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 01:42:00 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/22 14:44:25 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ int	map_has_colectibles(char **map, t_map *map_set)
 void	map_goal_possible(t_map *map_set, char **map_canvas, int p_pos_y,
 		int p_pos_x)
 {
-	if (!(p_pos_y >= 0 && p_pos_y < map_set->y && p_pos_x >= 0
-			&& p_pos_x < (map_set->x) - 2))
+	if (!(p_pos_y >= 0 && p_pos_y < (map_set->y - 1) && p_pos_x >= 0
+			&& p_pos_x < ((map_set->x) - 2)))
 		return ;
 	if (map_set->map[p_pos_y][p_pos_y] == '1')
 		return ;
