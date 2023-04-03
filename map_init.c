@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 23:39:24 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/03/24 13:54:09 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ t_map	*map_init(char *argv)
     printf("%d", ft_count_lines(argv[1]));
 } */
 
-int	main(int argc, char **argv)
+/* int	main(int argc, char **argv)
 {
 	t_map	*gps;
 	int		i;
@@ -140,4 +140,4 @@ int	main(int argc, char **argv)
 	}
 	free_t_map(gps, ' ');
 	return (0);
-}
+} */
