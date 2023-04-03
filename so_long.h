@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/03 16:48:09 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:41:22 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,10 @@ typedef struct s_window
 int				check_map_name(char *str);
 int				check_arguments_input(int ac, char **av);
 
+/* free_memory */
+char			**free_map(char **map, int y);
+t_map			*free_t_map(t_map *map_set, char error);
+
 /* map_init.c */
 int				ft_count_lines(char *argv);
 char			**map_reader(char *argv);
@@ -89,7 +93,7 @@ size_t			ft_count_map_lines(char **map);
 int				number_of_c(char **map);
 char			**map_blank(int y, int x);
 
-/* free_memory */
-char			**free_map(char **map, int y);
-t_map			*free_t_map(t_map *map_set, char error);
+/* sprites_game */
+
+
 #endif

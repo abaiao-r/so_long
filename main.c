@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:14:07 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/03 17:04:24 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/03 18:44:32 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int	main(int ac, char **av)
     window->mlx_window = mlx_new_window(window->mlx_begin, window->map->x * PX, window->map->y * PX, "so_long");
     /* if(!window->mlx_window)
         return(); */
+    if(!open_image(window))
+        return();
 	free_t_map(window->map, ' ');
-	return (0);
+    mlx_loop(window->mlx_begin);
 
 }

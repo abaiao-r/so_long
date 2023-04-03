@@ -6,18 +6,19 @@
 #    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 16:08:07 by abaiao-r          #+#    #+#              #
-#    Updated: 2023/04/03 15:54:38 by abaiao-r         ###   ########.fr        #
+#    Updated: 2023/04/03 18:43:07 by abaiao-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-SRC = 	map_check.c  \
+SRC = 	check_arguments.c \
+		free_memory.c \
+		map_check.c  \
 		map_check2.c \
 		map_check_utils.c \
-		free_memory.c \
 		map_init.c \
-		check_arguments.c \
+		sprites_game.c \
 		main.c
 		
 #main.c\
