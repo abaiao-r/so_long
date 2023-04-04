@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/03 18:41:22 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:38:04 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int				check_arguments_input(int ac, char **av);
 /* free_memory */
 char			**free_map(char **map, int y);
 t_map			*free_t_map(t_map *map_set, char error);
+int				free_mlx(t_window *window);
 
 /* map_init.c */
 int				ft_count_lines(char *argv);
@@ -94,6 +95,8 @@ int				number_of_c(char **map);
 char			**map_blank(int y, int x);
 
 /* sprites_game */
-
+int				open_image(t_window *window);
+void			image_selection(t_window *window, int height, int width);
+void			add_images_to_game(t_window *window);
 
 #endif

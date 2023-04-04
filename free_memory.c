@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_memory.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:26:24 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 15:34:39 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/04 17:41:38 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,25 @@ t_map	*free_t_map(t_map *map_set, char error)
 is different than 1.\n");
 	if (error == 'd')
 		ft_printf("Error:  Map doesn't have collectibles or \
-map has an invalid element(!01PCE)\n");
+map has an invalid	element(!01PCE)\n");
 	if (error == 'e')
 		ft_printf("Error:  Is not possible for the the player \
 to reach all collectibles and the exit\n");
 	return (map_set);
+}
+
+int	free_mlx(t_window *window)
+{
+	free_map(window->map->map, window->map->y);
+	if (!window->mlx_begin && !window->mlx_window)
+	{
+		mlx_clear_window(window->mlx_begin, window->mlx_window);
+		mlx_destroy_window(window->mlx_begin, window->mlx_window);
+	}
+	free(window->sprite);
+	free(window->map);
+	free(window->mlx_begin);
+	free(window);
+	exit(0);
+	return (1);
 }
