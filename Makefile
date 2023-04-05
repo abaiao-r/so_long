@@ -6,14 +6,16 @@
 #    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 16:08:07 by abaiao-r          #+#    #+#              #
-#    Updated: 2023/04/05 13:10:31 by abaiao-r         ###   ########.fr        #
+#    Updated: 2023/04/05 17:44:55 by abaiao-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 SRC = 	check_arguments.c \
+		close_handler.c \
 		free_memory.c \
+		key_handler.c \
 		map_check.c  \
 		map_check2.c \
 		map_check_utils.c \

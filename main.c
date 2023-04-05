@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:14:07 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/05 13:52:49 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:46:08 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ int	main(int ac, char **av)
 	if (!open_image(window))
 		return (free_mlx(window));
 	add_images_to_game(window);
+	mlx_hook(window->mlx_begin, 17, 1L << 17, close_handler, window);
+	/* mlx_hook(window->window_begin, 2, 1L << 0, key_handler, window); */
 	mlx_loop(window->mlx_begin);
 }

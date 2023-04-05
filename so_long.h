@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/05 13:55:25 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:53:32 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,9 @@ typedef struct s_window
 /* check_arguments_input */
 int				check_map_name(char *str);
 int				check_arguments_input(int ac, char **av);
+
+/* close_handler */
+int				close_handler(t_window *window);
 
 /* free_memory */
 char			**free_map(char **map, int y);
