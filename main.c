@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:14:07 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/05 19:01:40 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/06 00:11:28 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	main(int ac, char **av)
 	if (!window)
 		return (0);
 	window->map = map_init(av[1]);
-	if (window == NULL)
+	if (!window->map)
 	{
-		printf("Error: map_init returned NULL\n");
-		return (1);
+		free(window);
+		return (0);
 	}
 	window->mlx_begin = mlx_init();
 	if (!window->mlx_begin)
@@ -38,6 +38,6 @@ int	main(int ac, char **av)
 		return (free_mlx(window));
 	add_images_to_game(window);
 	mlx_hook(window->mlx_begin, 17, 1L << 17, close_handler, window);
-	mlx_hook(window->window_begin, 2, 1L << 0, key_handler, window);
+	mlx_hook(window->mlx_begin, 2, 1L << 0, key_handler, window);
 	mlx_loop(window->mlx_begin);
 }

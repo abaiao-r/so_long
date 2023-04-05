@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+         #
+#    By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 16:08:07 by abaiao-r          #+#    #+#              #
-#    Updated: 2023/04/05 17:44:55 by abaiao-r         ###   ########.fr        #
+#    Updated: 2023/04/06 00:15:22 by andrefranci      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = so_long
 
 SRC = 	check_arguments.c \
 		close_handler.c \
+		end_game.c \
 		free_memory.c \
 		key_handler.c \
 		map_check.c  \
@@ -22,10 +23,6 @@ SRC = 	check_arguments.c \
 		map_init.c \
 		sprites_game.c \
 		main.c
-		
-#main.c\
-
-#mlx_init.c \
 
 
 #OBJS = $(SRC:.c=.o)
@@ -51,7 +48,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 			$(MAKE) -C $(LIBFT_DIR) bonus
 			$(MAKE) -C $(MLX_LIB_DIR)
-			$(CC) $(CFLAGS) $(MLX_INCLUDE) $(SRC) libft/libft.a $(MLX_FLAGS) -o $(NAME) -fsanitize=address
+			$(CC) $(CFLAGS) $(MLX_INCLUDE) $(SRC) libft/libft.a $(MLX_FLAGS) -o $(NAME) 
+#-fsanitize=address
 clean:	
 			$(RM) $(OBJS)
 			$(MAKE) -C $(LIBFT_DIR) clean

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/05 20:24:53 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/06 00:00:56 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,18 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+
+/* To find the keycode -> cat
+	/usr/include/X11/keysymdef.h and then conver the hexadecimal to decimal*/
+# define KEY_ESC 65307
+# define KEY_UP 65362
+# define KEY_DOWN 65364
+# define KEY_LEFT 65363
+# define KEY_RIGHT 65361
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
 
 # define PX 64
 
@@ -70,12 +82,17 @@ int				check_arguments_input(int ac, char **av);
 /* close_handler */
 int				close_handler(t_window *window);
 
+/* end_game */
+int end_game(t_window *window, int y, int x);
+
 /* free_memory */
 char			**free_map(char **map, int y);
 t_map			*free_t_map(t_map *map_set, char error);
 int				free_mlx(t_window *window);
 
 /* key_handler */
+void			move_right(t_window *window);
+void			move_left(t_window *window);
 void			move_down(t_window *window);
 void			move_up(t_window *window);
 int				key_handler(int keycode, t_window *window);

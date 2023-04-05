@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   key_handler.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:43:09 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/05 20:30:50 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/05 23:44:20 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	move_left(t_window *window)
+void	move_right(t_window *window)
 {
 	int	y;
 	int	x;
@@ -21,7 +21,7 @@ void	move_left(t_window *window)
 	x = window->map->p_pos_x;
 	if ((x + 1 > 0) && (window->map->map[y][x + 1] != '1'))
 	{
-		if (!is_game_finished(window, y, x - 1))
+		if (!end_game(window, y, x - 1))
 			return ;
 		window->map->p_pos_x++;
 		window->map->map[y][x + 1] = 'P';
@@ -42,7 +42,7 @@ void	move_left(t_window *window)
 	x = window->map->p_pos_x;
 	if ((x - 1 > 0) && (window->map->map[y][x - 1] != '1'))
 	{
-		if (!is_game_finished(window, y, x - 1))
+		if (!end_game(window, y, x - 1))
 			return ;
 		window->map->p_pos_x--;
 		window->map->map[y][x - 1] = 'P';
@@ -63,7 +63,7 @@ void	move_down(t_window *window)
 	x = window->map->p_pos_x;
 	if ((y + 1 > 0) && (window->map->map[y + 1][x] != '1'))
 	{
-		if (!is_game_finished(window, y + 1, x))
+		if (!end_game(window, y + 1, x))
 			return ;
 		window->map->p_pos_y++;
 		window->map->map[y + 1][x] = 'P';
@@ -84,7 +84,7 @@ void	move_up(t_window *window)
 	x = window->map->p_pos_x;
 	if ((y - 1 > 0) && (window->map->map[y - 1][x] != '1'))
 	{
-		if (!is_game_finished(window, y - 1, x))
+		if (!end_game(window, y - 1, x))
 			return ;
 		window->map->p_pos_y--;
 		window->map->map[y - 1][x] = 'P';
