@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:14:07 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/04 17:54:25 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/05 13:52:49 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	t_window *window;
+	t_window	*window;
 
 	if (!check_arguments_input(ac, av))
 		return (0);
@@ -30,8 +30,8 @@ int	main(int ac, char **av)
 	window->mlx_begin = mlx_init();
 	if (!window->mlx_begin)
 		return (free_mlx(window));
-	window->mlx_window = mlx_new_window(window->mlx_begin, window->map->x * PX,
-			window->map->y * PX, "so_long");
+	window->mlx_window = mlx_new_window(window->mlx_begin, (window->map->x - 1)
+			* PX, window->map->y * PX, "so_long");
 	if (!window->mlx_window)
 		return (free_mlx(window));
 	if (!open_image(window))

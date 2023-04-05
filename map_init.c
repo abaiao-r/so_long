@@ -6,11 +6,29 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/03 14:31:01 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/05 13:36:57 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+/* static void	print_map(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 23)
+		{
+			printf("%c", map[i][j]);
+			j++;
+		}
+		i++;
+	}
+} */
 
 int	ft_count_lines(char *argv)
 {

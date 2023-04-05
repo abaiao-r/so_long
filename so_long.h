@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/04 17:38:04 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/05 13:55:25 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <string.h>
 # include <unistd.h>
 
-# define PX 32
+# define PX 64
 
 /* map_set */
 typedef struct s_map
