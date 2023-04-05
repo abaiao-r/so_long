@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/05 17:53:32 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/05 20:24:53 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,11 @@ int				close_handler(t_window *window);
 char			**free_map(char **map, int y);
 t_map			*free_t_map(t_map *map_set, char error);
 int				free_mlx(t_window *window);
+
+/* key_handler */
+void			move_down(t_window *window);
+void			move_up(t_window *window);
+int				key_handler(int keycode, t_window *window);
 
 /* map_init.c */
 int				ft_count_lines(char *argv);
