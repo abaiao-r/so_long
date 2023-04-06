@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:43:09 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/05 23:44:20 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/06 19:25:55 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ void	move_right(t_window *window)
 
 	y = window->map->p_pos_y;
 	x = window->map->p_pos_x;
-	if ((x + 1 > 0) && (window->map->map[y][x + 1] != '1'))
+	if ((x + 1 < (window->map->x - 1)) && (window->map->map[y][x + 1] != '1'))
 	{
-		if (!end_game(window, y, x - 1))
+		if (!end_game(window, y, x + 1) == 0)
 			return ;
 		window->map->p_pos_x++;
 		window->map->map[y][x + 1] = 'P';
@@ -42,7 +42,7 @@ void	move_left(t_window *window)
 	x = window->map->p_pos_x;
 	if ((x - 1 > 0) && (window->map->map[y][x - 1] != '1'))
 	{
-		if (!end_game(window, y, x - 1))
+		if (!end_game(window, y, x - 1) == 0)
 			return ;
 		window->map->p_pos_x--;
 		window->map->map[y][x - 1] = 'P';
@@ -61,9 +61,9 @@ void	move_down(t_window *window)
 
 	y = window->map->p_pos_y;
 	x = window->map->p_pos_x;
-	if ((y + 1 > 0) && (window->map->map[y + 1][x] != '1'))
+	if ((y + 1 < window->map->y) && (window->map->map[y + 1][x] != '1'))
 	{
-		if (!end_game(window, y + 1, x))
+		if (!end_game(window, y + 1, x) == 0)
 			return ;
 		window->map->p_pos_y++;
 		window->map->map[y + 1][x] = 'P';
@@ -84,7 +84,7 @@ void	move_up(t_window *window)
 	x = window->map->p_pos_x;
 	if ((y - 1 > 0) && (window->map->map[y - 1][x] != '1'))
 	{
-		if (!end_game(window, y - 1, x))
+		if (!end_game(window, y - 1, x) == 0)
 			return ;
 		window->map->p_pos_y--;
 		window->map->map[y - 1][x] = 'P';

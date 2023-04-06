@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/06 00:00:56 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/06 18:34:31 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 # include <string.h>
 # include <unistd.h>
 
-/* To find the keycode -> cat
-	/usr/include/X11/keysymdef.h and then conver the hexadecimal to decimal*/
+/* To find the keycode in linux-> 
+cat /usr/include/X11/keysymdef.h and then convert the hexadecimal to decimal*/
 # define KEY_ESC 65307
 # define KEY_UP 65362
 # define KEY_DOWN 65364
@@ -83,7 +83,7 @@ int				check_arguments_input(int ac, char **av);
 int				close_handler(t_window *window);
 
 /* end_game */
-int end_game(t_window *window, int y, int x);
+int				end_game(t_window *window, int y, int x);
 
 /* free_memory */
 char			**free_map(char **map, int y);

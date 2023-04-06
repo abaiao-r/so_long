@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 14:26:06 by abaiao-r          #+#    #+#             */
-/*   Updated: 2022/10/29 19:10:07 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:48:58 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	ft_bzero(void*s, size_t n)
 	i = 0;
 	while (i < n)
 	{
-	p[i] = '\0';
-	i++;
+		p[i] = '\0';
+		i++;
 	}
 }
 /* int main(void)

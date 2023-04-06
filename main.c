@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:14:07 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/06 00:11:28 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/06 19:51:09 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,6 @@ int	main(int ac, char **av)
 	mlx_hook(window->mlx_begin, 17, 1L << 17, close_handler, window);
 	mlx_hook(window->mlx_begin, 2, 1L << 0, key_handler, window);
 	mlx_loop(window->mlx_begin);
+	/* free_t_map(window->map, ' ');
+	free_mlx(window); */
 }

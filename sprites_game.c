@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sprites_game.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 18:46:09 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/05 14:54:47 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:48:53 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
