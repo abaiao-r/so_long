@@ -6,7 +6,7 @@
 #    By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 16:08:07 by abaiao-r          #+#    #+#              #
-#    Updated: 2023/04/06 18:13:31 by andrefranci      ###   ########.fr        #
+#    Updated: 2023/04/08 17:27:45 by andrefranci      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,8 +48,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 			$(MAKE) -C $(LIBFT_DIR) bonus
 			$(MAKE) -C $(MLX_LIB_DIR)
-			$(CC) $(CFLAGS) $(MLX_INCLUDE) $(SRC) libft/libft.a $(MLX_FLAGS) -o $(NAME) 
-#-fsanitize=address
+			$(CC) $(CFLAGS) $(MLX_INCLUDE) $(SRC) libft/libft.a $(MLX_FLAGS) -o $(NAME) -fsanitize=address
 clean:	
 			$(RM) $(OBJS)
 			$(MAKE) -C $(LIBFT_DIR) clean

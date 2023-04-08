@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   close_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:12:38 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/05 17:49:50 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/08 17:39:44 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	close_handler(t_window *window)
 	mlx_destroy_display(window->mlx_begin);
 	free(window->sprite);
 	free(window->map);
+	free(window->mlx_begin);
 	free(window);
 	exit(0);
 	return (1);
