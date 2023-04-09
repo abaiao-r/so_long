@@ -6,7 +6,7 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/06 00:11:53 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/09 12:49:43 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@
 	}
 } */
 
+/* Overall, the "ft_count_lines" function counts the number of 
+lines in a file by using "get_next_line" to read each line of 
+the file and incrementing a counter until the end of the file is reached. */
 int	ft_count_lines(char *argv)
 {
 	char	*line;
@@ -50,6 +53,9 @@ int	ft_count_lines(char *argv)
 	return (i);
 }
 
+/* Overall, the "map_reader" function reads a map from a file and 
+returns a 2D char array with the contents of the file.
+It adds a NULL pointer to the end of the "map"*/
 char	**map_reader(char *argv)
 {
 	char	**map;
@@ -75,6 +81,10 @@ char	**map_reader(char *argv)
 	return (map);
 }
 
+/* Overall, the "map_init" function initializes a "t_map" struct 
+by reading the map from a file, checking if it is valid, exploring 
+the map to check if certain goals are possible, and returns a 
+pointer to the initialized "t_map" struct. */
 t_map	*map_init(char *argv)
 {
 	t_map	*map_set;

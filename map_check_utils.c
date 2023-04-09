@@ -6,12 +6,13 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 20:24:59 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/22 14:38:02 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/09 12:12:10 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/* Funtion to count the lines of the (char **) map.*/
 size_t	ft_count_map_lines(char **map)
 {
 	size_t	i;
@@ -24,6 +25,7 @@ size_t	ft_count_map_lines(char **map)
 	return (i);
 }
 
+/* Funtion to count the number of collectible ('C') present int char **map. */
 int	number_of_c(char **map)
 {
 	int	i;
@@ -48,6 +50,7 @@ int	number_of_c(char **map)
 	return (count_colectibles);
 }
 
+/* Funtion to create a (char **) with the same size as (char **) map. */
 char	**map_blank(int y, int x)
 {
 	char	**map_blank;

@@ -6,12 +6,15 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:23:48 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/23 00:07:00 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/09 12:24:11 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/* Funtion checks if the map has 1 player only ('P').
+It also registers the player starting position on t_map
+If yes return 1, else return 0. */
 int	map_1_start_pos(char **map, t_map *map_set)
 {
 	int	i;
@@ -41,6 +44,8 @@ int	map_1_start_pos(char **map, t_map *map_set)
 	return (1);
 }
 
+/* Funtion checks if the map has 1 exit only ('E').
+If yes return 1, else return 0. */
 int	map_1_exit(char **map, t_map *map_set)
 {
 	int	i;
@@ -66,6 +71,8 @@ int	map_1_exit(char **map, t_map *map_set)
 	return (1);
 }
 
+/* Funtion checks if the map is enclosed (by '1').
+If map is enclosed return 1, else return 0. */
 int	map_is_enclosed(char **map, t_map *map_set)
 {
 	size_t	i;
@@ -94,6 +101,9 @@ int	map_is_enclosed(char **map, t_map *map_set)
 	return (1);
 }
 
+/* Funtion checks if the map is rectangular using strlen to 
+compare if each line is equal.
+If map is rectangular return 1, else return 0. */
 int	map_is_rectangular(char **map, t_map *map_set)
 {
 	int	i;
@@ -117,6 +127,8 @@ int	map_is_rectangular(char **map, t_map *map_set)
 	return (1);
 }
 
+/* Funtion to check if char **map follows some conditions and if not,
+ it frees the memory allocated for for the map and returns a 0.*/
 int	map_checklist(char **map, t_map *map_set)
 {
 	if (!map_is_rectangular(map, map_set))

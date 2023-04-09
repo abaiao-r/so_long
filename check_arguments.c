@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arguments.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:34:34 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/03 17:53:25 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/09 12:05:21 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,16 @@ int	check_map_name(char *str)
 	return (0);
 }
 
+/* Funtion returns a 0 if the terminal input to run the program is wrong.
+It checks if the number of arguments is 2.
+Then checks if the second argument first 4 characters are
+/maps and the last 4 are .ber*/
 int	check_arguments_input(int ac, char **av)
 {
 	if (ac == 1 || ac > 2)
 	{
 		ft_printf("Your input on terminal should \
-		be: ./so_long maps/<map_name.ber>");
+		be: ./so_long maps/<map_name>.ber");
 		return (0);
 	}
 	else if (ac == 2 && check_map_name(av[1]))

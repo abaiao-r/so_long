@@ -6,12 +6,14 @@
 /*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 14:47:26 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/23 00:07:33 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/09 12:41:35 by andrefranci      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/* Funtion checks if the map has this characters ('0' '1' 'P' 'C' 'E').
+If yes return 1, else return 0. */
 int	map_is_only_01pce(char **map, t_map *map_set)
 {
 	size_t	i;
@@ -35,6 +37,8 @@ int	map_is_only_01pce(char **map, t_map *map_set)
 	return (1);
 }
 
+/* Funtion checks if the map has collectibles('C').
+If yes return 1, else return 0. */
 int	map_has_colectibles(char **map, t_map *map_set)
 {
 	int	i;
@@ -58,6 +62,12 @@ int	map_has_colectibles(char **map, t_map *map_set)
 	return (0);
 }
 
+/* The "map_goal_possible" function is a recursive function that takes in a 
+pointer to a struct called "t_map",a 2D char array called "map_canvas", and 
+two integer values "p_pos_y" and "p_pos_x". The function explores the map 
+and checks if certain goals are possible to achieve,such as reaching the 'E' 
+cell or collecting all 'C' cells. It marks the visited cells in the "map_canvas" 
+array to avoid revisiting them. */
 void	map_goal_possible(t_map *map_set, char **map_canvas, int p_pos_y,
 		int p_pos_x)
 {
