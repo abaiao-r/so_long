@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 14:00:36 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/03/04 19:38:04 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:18:14 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # include <bsd/bsd.h>
 # include <ctype.h>
+# include <errno.h>
 # include <fcntl.h>
 # include <stdarg.h>
 # include <stdio.h>

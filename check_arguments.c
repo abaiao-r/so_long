@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:34:34 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/10 15:04:25 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:18:54 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,9 @@ be: ./so_long maps/<map_name>.ber");
 	else
 	{
 		fd = open(av[1], O_RDONLY);
-		if (fd < -1 || fd > 4096)
-			return (0);
-		if (fd == -1)
+		if (fd < 0)
 		{
-			ft_printf("File %s does not exist.\n", av[1]);
+			ft_printf("File %s does not exist: %s\n", av[1], strerror(errno));
 			return (0);
 		}
 		close(fd);
