@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/10 15:03:32 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:34:51 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "libft/libft.h"
-# include "minilibx-linux/mlx.h"
+# include ".minilibx-linux/mlx.h"
 # include <limits.h>
 # include <stddef.h>
 # include <stdio.h>
@@ -33,7 +33,6 @@ cat /usr/include/X11/keysymdef.h and then convert the hexadecimal to decimal*/
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
-
 
 # define PX 64
 

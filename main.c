@@ -6,11 +6,29 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:14:07 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/10 14:50:12 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:39:48 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static int	start_game(t_window *window)
+{
+	window->mlx_begin = mlx_init();
+	if (!window->mlx_begin)
+		return (free_mlx(window));
+	window->mlx_window = mlx_new_window(window->mlx_begin, (window->map->x - 1)
+			* PX, window->map->y * PX, "so_long");
+	if (!window->mlx_window)
+		return (free_mlx(window));
+	if (!open_image(window))
+		return (free_mlx(window));
+	add_images_to_game(window);
+	mlx_hook(window->mlx_window, 17, 1L << 17, close_handler, window);
+	mlx_hook(window->mlx_window, 2, 1L << 0, key_handler, window);
+	mlx_loop(window->mlx_begin);
+	return (0);
+}
 
 int	main(int ac, char **av)
 {
@@ -27,17 +45,5 @@ int	main(int ac, char **av)
 		free(window);
 		return (0);
 	}
-	window->mlx_begin = mlx_init();
-	if (!window->mlx_begin)
-		return (free_mlx(window));
-	window->mlx_window = mlx_new_window(window->mlx_begin, (window->map->x - 1)
-			* PX, window->map->y * PX, "so_long");
-	if (!window->mlx_window)
-		return (free_mlx(window));
-	if (!open_image(window))
-		return (free_mlx(window));
-	add_images_to_game(window);
-	mlx_hook(window->mlx_window, 17, 1L << 17, close_handler, window);
-	mlx_hook(window->mlx_window, 2, 1L << 0, key_handler, window);
-	mlx_loop(window->mlx_begin);
+	start_game(window);
 }
