@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   close_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:12:38 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/08 17:39:44 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/10 13:57:05 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 15:07:46 by andrefranci       #+#    #+#             */
-/*   Updated: 2023/04/06 18:34:31 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/10 15:03:32 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,13 @@ cat /usr/include/X11/keysymdef.h and then convert the hexadecimal to decimal*/
 # define KEY_ESC 65307
 # define KEY_UP 65362
 # define KEY_DOWN 65364
-# define KEY_LEFT 65363
-# define KEY_RIGHT 65361
+# define KEY_LEFT 65361
+# define KEY_RIGHT 65363
 # define KEY_W 119
 # define KEY_A 97
 # define KEY_S 115
 # define KEY_D 100
+
 
 # define PX 64
 
@@ -76,11 +77,11 @@ typedef struct s_window
 }				t_window;
 
 /* check_arguments_input */
-int				check_map_name(char *str);
 int				check_arguments_input(int ac, char **av);
 
 /* close_handler */
 int				close_handler(t_window *window);
+int				no_event(void *window);
 
 /* end_game */
 int				end_game(t_window *window, int y, int x);

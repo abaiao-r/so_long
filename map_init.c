@@ -3,32 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_init.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 16:49:22 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/09 12:49:43 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/10 14:56:32 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-/* static void	print_map(char **map)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < 4)
-	{
-		j = 0;
-		while (j < 23)
-		{
-			printf("%c", map[i][j]);
-			j++;
-		}
-		i++;
-	}
-} */
 
 /* Overall, the "ft_count_lines" function counts the number of 
 lines in a file by using "get_next_line" to read each line of 

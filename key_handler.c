@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_handler.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:43:09 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/08 17:35:26 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/10 14:04:48 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	move_right(t_window *window)
 	x = window->map->p_pos_x;
 	if ((x + 1 < (window->map->x - 1)) && (window->map->map[y][x + 1] != '1'))
 	{
-		if (!end_game(window, y, x + 1) == 0)
+		if (!(end_game(window, y, x + 1)))
 			return ;
 		window->map->p_pos_x++;
 		window->map->map[y][x + 1] = 'P';
@@ -42,7 +42,7 @@ void	move_left(t_window *window)
 	x = window->map->p_pos_x;
 	if ((x - 1 > 0) && (window->map->map[y][x - 1] != '1'))
 	{
-		if (!end_game(window, y, x - 1) == 0)
+		if (!(end_game(window, y, x - 1)))
 			return ;
 		window->map->p_pos_x--;
 		window->map->map[y][x - 1] = 'P';
@@ -63,7 +63,7 @@ void	move_down(t_window *window)
 	x = window->map->p_pos_x;
 	if ((y + 1 < window->map->y) && (window->map->map[y + 1][x] != '1'))
 	{
-		if (!end_game(window, y + 1, x) == 0)
+		if (!(end_game(window, y + 1, x)))
 			return ;
 		window->map->p_pos_y++;
 		window->map->map[y + 1][x] = 'P';
@@ -84,7 +84,7 @@ void	move_up(t_window *window)
 	x = window->map->p_pos_x;
 	if ((y - 1 > 0) && (window->map->map[y - 1][x] != '1'))
 	{
-		if (!end_game(window, y - 1, x) == 0)
+		if (!(end_game(window, y - 1, x)))
 			return ;
 		window->map->p_pos_y--;
 		window->map->map[y - 1][x] = 'P';
