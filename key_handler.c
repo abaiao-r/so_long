@@ -6,12 +6,18 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:43:09 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/10 14:04:48 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/10 15:58:10 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/* move_right, move_left, move_up, move_down: These functions handle 
+the movement of the player character on the map. They check if the 
+movement is possible (i.e., the new position is within the map 
+boundaries and is not a wall), update the position of the character 
+in the map, update the image displayed on the screen, and increase 
+the number of moves. */
 void	move_right(t_window *window)
 {
 	int	y;
@@ -96,6 +102,10 @@ void	move_up(t_window *window)
 	}
 }
 
+/* key_handler: This function is called whenever a key is 
+pressed on the keyboard. It checks which key was pressed and 
+calls the appropriate movement function. If the ESC key is 
+pressed, the function calls the close_handler function to exit the game. */
 int	key_handler(int keycode, t_window *window)
 {
 	if (keycode == KEY_ESC)
