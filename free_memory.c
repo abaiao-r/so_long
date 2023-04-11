@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:26:24 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/11 14:34:37 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:02:21 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,10 @@ the map, the MLX library, and finally, the entire window.
 mlx_clear_window is a function that clears the contents of a window 
 in a graphical application using the MiniLibX library.
 
+mlx_destroy_image() is a function provided by the MLX library that 
+is used to destroy an image that was created using mlx_new_image(). 
+This function frees the memory that was allocated for the image.
+
 mlx_destroy_window: This function is used to destroy a given window 
 and free any associated resources. */
 /* int	free_mlx(t_window *window)
@@ -72,7 +76,6 @@ and free any associated resources. */
 	if (!window->mlx_begin && !window->mlx_window)
 	{
 		mlx_clear_window(window->mlx_begin, window->mlx_window);
-		mlx_destroy_image(window->mlx_begin,  );
 		mlx_destroy_window(window->mlx_begin, window->mlx_window);
 	}
 	free(window->sprite);

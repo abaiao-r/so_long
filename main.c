@@ -6,12 +6,34 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:14:07 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/10 18:29:13 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:09:43 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/* Notes:
+mlx_init() function initializes the connection between the program 
+and the graphics system of the computer. It returns a pointer to a 
+t_mlx structure, which contains information about the connection 
+that was established.
+
+Once mlx_init() has been called, you can use other functions provided 
+by the MLX library to create windows, draw shapes, and display images 
+on the screen. 
+
+mlx_new_window() is a function provided by the MLX (MiniLibX) library 
+in C programming, which creates a new window on the screen.
+
+mlx_hook() is a function provided by the MLX (MiniLibX) library in C 
+programming, which is used to register a function to handle a specific 
+type of event that occurs in the window (pointer to thw window struct, 
+event_type, event_mask, pointer to a function).
+
+mlx_loop() is a function provided by the MLX (MiniLibX) library in C 
+programming, which starts an event loop that waits for events to occur 
+in the window and calls the appropriate event handlers.
+*/
 static int	start_game(t_window *window)
 {
 	window->mlx_begin = mlx_init();
