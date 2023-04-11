@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_memory.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andrefrancisco <andrefrancisco@student.    +#+  +:+       +#+        */
+/*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:26:24 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/09 14:37:08 by andrefranci      ###   ########.fr       */
+/*   Updated: 2023/04/11 14:34:37 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ t_map	*free_t_map(t_map *map_set, char error)
 	free(map_set);
 	map_set = NULL;
 	if (error == 'a')
-		ft_printf("Error: Map isn't rectangular\n");
+		ft_printf("Error\nMap isn't rectangular\n");
 	if (error == 'b')
-		ft_printf("Error: Map isn't enclosed by walls\n");
+		ft_printf("Error\nMap isn't enclosed by walls\n");
 	if (error == 'c')
-		ft_printf("Error: Player start position or map exit \
+		ft_printf("Error\nPlayer start position or map exit \
 is different than 1.\n");
 	if (error == 'd')
-		ft_printf("Error:  Map doesn't have collectibles or \
+		ft_printf("Error\nMap doesn't have collectibles or \
 map has an invalid	element(!01PCE)\n");
 	if (error == 'e')
-		ft_printf("Error:  Is not possible for the the player \
+		ft_printf("Error\nIs not possible for the the player \
 to reach all collectibles and the exit\n");
 	return (map_set);
 }

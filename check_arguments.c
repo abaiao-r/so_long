@@ -6,7 +6,7 @@
 /*   By: abaiao-r <abaiao-r@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 14:34:34 by abaiao-r          #+#    #+#             */
-/*   Updated: 2023/04/10 19:44:44 by abaiao-r         ###   ########.fr       */
+/*   Updated: 2023/04/11 14:39:06 by abaiao-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,13 @@ int	check_arguments_input(int ac, char **av)
 
 	if (ac != 2)
 	{
-		ft_printf("Your input on terminal should \
+		ft_printf("Error\nYour input on terminal should \
 be: ./so_long maps/<map_name>.ber");
 		return (0);
 	}
 	else if (ac == 2 && check_map_name(av[1]))
 	{
+		ft_printf("Error\n");
 		ft_printf("Wrong map name. Map name should be maps/<map_name>.ber");
 		return (0);
 	}
@@ -50,7 +51,8 @@ be: ./so_long maps/<map_name>.ber");
 		fd = open(av[1], O_RDONLY);
 		if (fd < 0)
 		{
-			ft_printf("File %s does not exist: %s\n", av[1], strerror(errno));
+			ft_printf("Error\n");
+			ft_printf("File %s doesn't exist: %s\n", av[1], strerror(errno));
 			return (0);
 		}
 		close(fd);
